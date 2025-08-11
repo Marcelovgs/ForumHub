@@ -76,7 +76,7 @@ public class TopicoController {
 
         topico.setTitulo(dados.titulo());
         topico.setMensagem(dados.mensagem());
-        // (Opcional) Poderia também permitir alterar o curso
+       
 
         return ResponseEntity.ok(new DadosDetalhamentoTopico(topico));
     }
