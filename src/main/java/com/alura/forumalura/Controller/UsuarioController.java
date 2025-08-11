@@ -21,7 +21,7 @@ public class UsuarioController {
     private UsuarioRepository repository;
 
     @Autowired
-    private PasswordEncoder passwordEncoder; // Injeta o Bean que você criou em SecurityConfigurations
+    private PasswordEncoder passwordEncoder; // Injeta o Bean em SecurityConfigurations
 
     @PostMapping
     @Transactional
