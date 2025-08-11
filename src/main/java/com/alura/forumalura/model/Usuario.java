@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Usuario implements UserDetails { // <<-- PASSO 1: Implemente UserDetails
+public class Usuario implements UserDetails { 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,8 +30,7 @@ public class Usuario implements UserDetails { // <<-- PASSO 1: Implemente UserDe
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // PASSO 2: Defina as permissões/roles do usuário.
-        // Para um sistema simples, podemos dizer que todo usuário é "ROLE_USER".
+       
         return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
 
@@ -45,8 +44,7 @@ public class Usuario implements UserDetails { // <<-- PASSO 1: Implemente UserDe
         return this.username;
     }
 
-    // PASSO 3: Para este projeto, podemos deixar tudo como 'true'.
-    // Em um sistema real, você poderia ter lógica para desativar ou bloquear usuários.
+   
     @Override
     public boolean isAccountNonExpired() {
         return true;
